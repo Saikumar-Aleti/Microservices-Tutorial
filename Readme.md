@@ -46,3 +46,13 @@ Disadvantages of Second Style
 
 1. Data duplication. Paying for the extra storage and an extra database.
 2. Harder to understand.
+
+Docker
+With Docker, we are going to create a series of containers. Container is an isolated computing environment containing everything to run one single program.
+There is a one to one pairing between docker containers and each instance of our running program. If we need to multiple copies of a program, we will start a second container for that particular program.
+
+Why Docker?
+
+1. Running our app right now make big assumptions about our environment, for example, we are assuming that node and npm are installed.
+2. Running our app also requires precise knowledge on how to start it (npm start).
+   Docker

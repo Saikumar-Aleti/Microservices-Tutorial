@@ -55,4 +55,19 @@ Why Docker?
 
 1. Running our app right now make big assumptions about our environment, for example, we are assuming that node and npm are installed.
 2. Running our app also requires precise knowledge on how to start it (npm start).
-   Docker
+
+Docker solves both these issues. Containers wrap up everything that is needed for a program and they also contain information about how to start and run it.
+
+Kubernetes
+Kubernetes is a tool for running a bunch of different containers together. When we make use of Kubernetes, we are going to give it some configuration files describing how we want our containers to run and interact with each other.Kubernetes will then create these containers to run our programs and handle communication i.e., network requests between all the different containers. We can really imagine kubernetes as a tool for running different programs and making communication between different programs easy and straightforward.
+
+With Kubernetes, we create something called a cluster. A cluster is a set of different virtual machines. It can have as few as one virtual machine or as many as hundred or thousands of virtual machines. All these virtual machines are referred to as nodes. All nodes are managed by a master. Master is essentially a program to manage everything in a cluster (All virtual machines and all the different programs that are running on them.).
+
+Example
+When we say "Run two copies of posts services and allow the posts to be accessible from a network" in our configuration file and feed it to master. Master will read the configuration file and try to implement all the steps that are written in there. In this case, it will attempt to create two copies of the posts service wrapped up inside of containers. These containers will more or less be randomly assigned to be executed by different virtual machines or nodes inside our cluster. Now in this scenario, we're kind of back in the same problem we had before where it could potentially be really hard for something like our event bus to figure out in how to reach out to say this copy of the post service and that post service.
+
+So the big thing that Kubernetes does for us is give us the ability to just kind of arbitrarily send requests or communicate between these different services with some kind of third party thing that we are going to create. So in short, you can kind of imagine down here that we're going to create something inside of our cluster that we can just send requests to, and it will automatically figure out how to route requests off to the appropriate service that is running inside of our application.
+
+So the big reason that you and I are using Kubernetes around microservices is that it's going to make communication very easy and straightforward.
+
+It's also going to make creating services like launching new copies and scaling the number of copies we're running very easy and straightforward as well.

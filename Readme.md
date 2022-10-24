@@ -5,7 +5,7 @@ A monolithic server can be characterized as a server that contains all the routi
 A single microservice contains all the routing, middlewares, database access and business logic to implement one feature of our applicaion.
 
 What's the big challenge with microservices?
-Data management between services if the biggest challenge in Microservices. With microservices, we store and access data in sort of a strange way, each service gets it own database (If it needs one) and serivces will never ever reach into another service database. Giving every service its own database is a pattern and the pattern is called Database-Per-Service. The reasons for Database-Per-Service include,
+Data management between services is the biggest challenge in Microservices. With microservices, we store and access data in sort of a strange way, each service gets it own database (If it needs one) and serivces will never ever reach into another service database. Giving every service its own database is a pattern and the pattern is called Database-Per-Service. The reasons for Database-Per-Service include,
 
 1. We want every service to run independently of other services.
 2. Database schema or structure might change unexpectedly.
